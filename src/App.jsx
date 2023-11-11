@@ -23,7 +23,6 @@ const App = () => {
           </div>
         </div>
       )}
-      <h2>create new</h2>
       <AnecdoteForm />
     </div>
   )
