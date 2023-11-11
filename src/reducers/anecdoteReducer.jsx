@@ -41,6 +41,10 @@ const reducer = (state = initialState, action) => {
       const updatedAnecdote = {...anecdoteToChange, votes : anecdoteToChange.votes += 1}
       return state.map(a => a.id === id ? updatedAnecdote : a)
     }
+
+    case 'NEW_ANECDOTE': {
+      return [...initialState, action.payload]
+    }
   }
   console.log('state now: ', state)
   console.log('action', action)
