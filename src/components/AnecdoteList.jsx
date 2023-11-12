@@ -16,12 +16,18 @@ const Anecdote = ({ anecdote, handleVote}) => {
 }
 
 const AnecdoteList = () => {
-    const anecdotes = useSelector(state => state)
     const dispatch = useDispatch()
+    const filter = useSelector(state => state.filter)
+    const anecdotes = useSelector(state => state.anecdotes)
+
+    const filteredAnecdotes = filter.length === 0 
+    ? anecdotes
+    : anecdotes.filter(a => a.content.toLowerCase().includes(filter))
+
 
     return (
         <div>
-            {anecdotes
+            {filteredAnecdotes
                 .sort((a, b) => a.votes - b.votes).reverse()
                 .map(anecdote => (
                     <Anecdote
