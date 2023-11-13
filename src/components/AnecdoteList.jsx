@@ -27,7 +27,7 @@ const AnecdoteList = () => {
 
     return (
         <div>
-            {filteredAnecdotes
+            {[...filteredAnecdotes]
                 .sort((a, b) => a.votes - b.votes).reverse()
                 .map(anecdote => (
                     <Anecdote
