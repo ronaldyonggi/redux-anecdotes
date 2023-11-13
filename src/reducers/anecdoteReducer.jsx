@@ -46,8 +46,8 @@ const anecdoteReducer = (state = initialState, action) => {
       return [...initialState, action.payload]
     }
   }
-  console.log('state now: ', state)
-  console.log('action', action)
+  // console.log('state now: ', state)
+  // console.log('action', action)
 
   return state
 }
