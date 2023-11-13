@@ -38,7 +38,7 @@ const anecdoteReducer = (state = initialState, action) => {
     case 'VOTE': {
       const id = action.payload.id
       const anecdoteToChange = state.find(a => a.id === id)
-      const updatedAnecdote = {...anecdoteToChange, votes : anecdoteToChange.votes += 1}
+      const updatedAnecdote = {...anecdoteToChange, votes : anecdoteToChange.votes + 1}
       return state.map(a => a.id === id ? updatedAnecdote : a)
     }
 
