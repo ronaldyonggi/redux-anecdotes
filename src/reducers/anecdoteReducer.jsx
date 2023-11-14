@@ -33,7 +33,7 @@ const asObject = (anecdote) => {
 //   }
 // }
 
-const initialState = anecdotesAtStart.map(asObject)
+// const initialState = anecdotesAtStart.map(asObject)
 
 // const anecdoteReducer = (state = initialState, action) => {
 //   switch (action.type) {
@@ -56,7 +56,7 @@ const initialState = anecdotesAtStart.map(asObject)
 
 const anecdoteSlice = createSlice({
   name: 'anecdotes',
-  initialState,
+  initialState: [],
   reducers: {
     createAnecdote(state, action) {
       const newAnecdote = asObject(action.payload)
