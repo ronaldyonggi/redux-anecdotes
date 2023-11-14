@@ -16,7 +16,6 @@ const Anecdote = ({ anecdote, handleVote}) => {
     )
 }
 
-
 const AnecdoteList = () => {
     const dispatch = useDispatch()
     const filter = useSelector(state => state.filter)
@@ -25,6 +24,9 @@ const AnecdoteList = () => {
     const handleVote = anecdote => {
         dispatch(setNotification(`you voted '${anecdote.content}'`))
         dispatch(vote(anecdote.id))
+        setTimeout(() => {
+            dispatch(setNotification(''))
+        }, 5000);
     }
 
     const filteredAnecdotes = filter.length === 0 
